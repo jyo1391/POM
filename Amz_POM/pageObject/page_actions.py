@@ -5,17 +5,12 @@ class PageActionsClass(ElementsClass):
 
     def login_action(self):
         ec = ElementsClass()
-        try:
-            ec.signin.click()
-            #ec.emailAddress.send_keys('jyothi1391@gmail.com')
-        except Exception as e:
-            print(e.__class__)
+        ec.getLoginBtn().click()
+        ec.getEmailField().send_keys('jyothi1391@gmail.com')
+        ec.getEmailCont().click()
+        ec.getPassField().send_keys('123jyothi123')
+        ec.getSigninBtn().click()
 
-        '''
-        ec.emailCont.click()
-        ec.passwd.send_keys('123jyothi123')
-        ec.loginBtn.click()
-        '''
 
 
 

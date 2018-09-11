@@ -4,11 +4,23 @@ class ElementsClass(BaseTestClass):
 
     b_tst = BaseTestClass()
     driver = b_tst.setUp()
-    signin = driver.find_element_by_xpath('//a[@id="nav-link-yourAccount"]')
-    sleep(5)
-    #emailAddress = driver.find_element_by_xpath('//input[@type="email"]')
-    '''
-    emailCont = driver.find_element_by_xpath('//input[@id="continue"]')
-    passwd = driver.find_element_by_xpath('//input[@id="ap_password"]')
-    loginBtn = driver.find_element_by_xpath('//input[@id="signInSubmit"]')
-    '''
+
+    def getLoginBtn(self):
+        signin = self.driver.find_element_by_xpath('//a[@id="nav-link-yourAccount"]')
+        return signin
+
+    def getEmailField(self):
+        emailAddress = self.driver.find_element_by_xpath("//input[@type='email']")
+        return emailAddress
+
+    def getEmailCont(self):
+        emailCont = self.driver.find_element_by_xpath('//input[@id="continue"]')
+        return emailCont
+
+    def getPassField(self):
+        passwd = self.driver.find_element_by_xpath('//input[@id="ap_password"]')
+        return passwd
+
+    def getSigninBtn(self):
+        loginBtn = self.driver.find_element_by_xpath('//input[@id="signInSubmit"]')
+        return loginBtn
