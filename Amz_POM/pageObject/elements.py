@@ -36,3 +36,31 @@ class ElementsClass(BaseTestClass):
     def getSearchtext(self):
         searchTxt = self.driver.find_element_by_xpath("//span[@class='a-color-state a-text-bold']")
         return searchTxt
+
+    def getFirstProd(self):
+        firstProd = self.driver.find_element_by_xpath("//ul/li[1]/div//a/img")
+        return firstProd
+
+    def getWindowBefore(self):
+        window_before = self.driver.window_handles[0]
+        return window_before
+
+    def getWindowAfter(self):
+        window_after = self.driver.window_handles[1]
+        return window_after
+
+    def switchWindow(self):
+        window_after = self.getWindowAfter()
+        self.driver.switch_to.window(window_after)
+
+    def getAddCartBtn(self):
+        addCart = self.driver.find_element_by_id("add-to-cart-button")
+        return addCart
+
+    def getProceedBtn(self):
+        proceedBtn = self.driver.find_element_by_xpath('//a[@id="hlb-ptc-btn-native"]')
+        return proceedBtn
+
+    def getAddressBtn(self):
+        addBtn = self.driver.find_element_by_xpath('//a[contains(text(),"Deliver to this address")]')
+        return addBtn

@@ -1,4 +1,5 @@
 from Amz_POM.pageObject.elements import ElementsClass
+from time import sleep
 
 class PageActionsClass(ElementsClass):
 
@@ -16,5 +17,20 @@ class PageActionsClass(ElementsClass):
         self.getSearchBtn().click()
 
     def searchedTxt(self):
-        self.getSearchtext().text
+        srchTxt = self.getSearchtext().text
+        print(srchTxt)
+        return srchTxt
+
+    def AddToCart(self):
+        self.getWindowBefore()
+        self.getFirstProd().click()
+        self.switchWindow()
+        sleep(20)
+        self.getAddCartBtn().click()
+
+    def Proceed(self):
+        self.getProceedBtn().click()
+
+    def DeliverToAddress(self):
+        self.getAddressBtn().click()
 
