@@ -7,9 +7,9 @@ class PageActionsClass(ElementsClass):
 
     def login_action(self):
         self.getLoginBtn().click()
-        self.getEmailField().send_keys('jyothi1391@gmail.com')
+        self.getEmailField().send_keys('email')
         self.getEmailCont().click()
-        self.getPassField().send_keys('123jyothi123')
+        self.getPassField().send_keys('password')
         self.getSigninBtn().click()
 
     def searchAction(self):
