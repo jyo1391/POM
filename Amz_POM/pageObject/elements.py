@@ -24,3 +24,15 @@ class ElementsClass(BaseTestClass):
     def getSigninBtn(self):
         loginBtn = self.driver.find_element_by_xpath('//input[@id="signInSubmit"]')
         return loginBtn
+
+    def getSearchBox(self):
+        searchBox = self.driver.find_element_by_xpath("//input[@id='twotabsearchtextbox']")
+        return searchBox
+
+    def getSearchBtn(self):
+        searchBtn = self.driver.find_element_by_xpath('//input[@value="Go"]')
+        return searchBtn
+
+    def getSearchtext(self):
+        searchTxt = self.driver.find_element_by_xpath("//span[@class='a-color-state a-text-bold']")
+        return searchTxt
